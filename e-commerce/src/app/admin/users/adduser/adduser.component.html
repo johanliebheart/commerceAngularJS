@@ -1,0 +1,15 @@
+<h1>Añadir usuario</h1>
+<form #recievedUser="ngForm">
+
+  <label for="name">Nombre</label>
+  <input type="text" class="form-control" id="name" placeholder="Nombre" [(ngModel)]="user.name" name="name">
+
+  <label for="type">Tipo</label>
+  <input type="text" class="form-control" id="type" placeholder="Tipo de usuario" [(ngModel)]="user.type" name="name">
+
+  <label for="password">Password</label>
+  <input type="password" class="form-control" id="password" placeholder="password" [(ngModel)]="user.password" name="password">
+
+  <br>
+  <button type="button" class="btn btn-success" (click)="addUser()">Guardar</button>
+</form>

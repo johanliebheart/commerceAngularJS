@@ -1,0 +1,20 @@
+
+<h1>{{product.idProduct == null ? 'Agregar' : 'Editar'}} Producto  {{product.idProduct}}</h1>
+<form>
+  <label for="name">Nombre</label>
+  <input type="text" class="form-control" id="name" placeholder="Nombre del producto" [(ngModel)]="product.name" name="name">
+
+  <label for="stock">Stock</label>
+  <input type="text" class="form-control" id="stock" placeholder="stock" name="stock" [(ngModel)]="product.stock">
+
+  <label for="price">Pecio</label>
+  <input type="text" class="form-control" id="price" placeholder="price" name="price" [(ngModel)]="product.price">
+
+
+  <br>
+  <input type="file" (change)="onFileChanged($event)">
+  <img [src]="imgURL" height="200" width="200" *ngIf="imgURL">
+
+  <br>
+  <button type="button" class="btn btn-success" (click)="saveProduct()">Guardar</button>
+</form>

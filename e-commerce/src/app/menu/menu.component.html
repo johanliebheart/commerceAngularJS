@@ -1,0 +1,19 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div><a href="/" class="navbar-brand">E-commerce</a></div>
+
+    <ul class="navbar-nav">
+      <li><a class="nav-link" routerLink="/shop">Tienda</a></li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/admin/users" id="navbarDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          Admin
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a routerLink="/admin/users" class="dropdown-item">Usuarios</a>
+          <a routerLink="/admin/products" class="dropdown-item">Productos</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>

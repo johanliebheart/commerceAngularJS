@@ -1,0 +1,28 @@
+<h1>Productos Admin</h1>
+<a class="btn btn-primary mb-3" (click)="addProduct()">Agregar nuevo producto</a>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{product.idProduct}}</td>
+          <td>{{product.name}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="viewProduct(product.idProduct)">Ver detalles</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <app-addproduct *ngIf="action === 'edit' || action === 'add'" [product]="selectedProduct"  (productAddedEvent)="refreshData()"></app-addproduct>
+    <app-viewproduct *ngIf="action === 'view'" [product]="selectedProduct" (productDeletedEvent)="refreshData()"></app-viewproduct>
+  </div>
+</div>
